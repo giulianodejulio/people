@@ -1,8 +1,13 @@
 <launch>
   <!-- <arg name="scan_topic" default="rbkairos/merged_scan"/> -->
-  <arg name="scan_topic" default="rbkairos/front_laser/scan"/>
+  <arg name="scan_topic" default=""/>
+  <arg name="odom_frame" default=""/>
+  <param name="/leg_detector/fixed_frame" value="$(arg odom_frame)"/>
   <node pkg="leg_detector" type="leg_detector" name="leg_detector"
-        args="scan:=$(arg scan_topic) $(find leg_detector)/config/trained_leg_detector.yaml" output="screen"/>
+        args="scan:=$(arg scan_topic)
+              fixed_frame:=$(arg odom_frame)
+              $(find leg_detector)/config/trained_leg_detector.yaml"
+        output="screen"/>
 </launch>
 
 <!-- args="scan:=base_scan $(find leg_detector)/config/trained_leg_detector.yaml" output="screen"/> -->

@@ -1,8 +1,8 @@
 <launch>
-	<arg name="scan_topic" default="rbkairos/front_laser/scan"/>
+	<arg name="scan_topic" default=""/>
 	<!-- <arg name="scan_topic" default="rbkairos/merged_scan"/> -->
-	<arg name="map_topic" default="rbkairos/map"/>
-	<arg name="mobile_base" default="rbkairos"/>
+	<arg name="map_topic" default=""/>
+	<arg name="mobile_base" default=""/>
     
     <node name="map_laser_filter" pkg="map_laser" type="filter.py" output="screen">
         <remap from="/scan_filtered" to="$(arg scan_topic)"/>
