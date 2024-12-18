@@ -5,5 +5,6 @@
     <remap from="scan" to="base_scan" />
   </node>
   <node pkg="leg_detector" type="leg_detector" name="leg_detector"
-        args="scan:=scan_filtered $(find leg_detector)/config/trained_leg_detector.yaml"/>
+        args="scan:=scan $(find leg_detector)/config/trained_leg_detector.yaml"/>
+        <!-- args="scan:=scan_filtered $(find leg_detector)/config/trained_leg_detector.yaml"/> -->
 </launch>
